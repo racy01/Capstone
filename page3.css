@@ -1,0 +1,65 @@
+/* Reset default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+/* Gallery grid layout */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    gap: 10px; /* Gap between gallery items */
+    padding: 20px; /* Padding around gallery */
+}
+
+/* Individual gallery item */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    transition: transform 0.3s ease;
+}
+
+/* Image inside gallery item */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images cover the container */
+    transition: transform 0.3s ease;
+}
+
+/* Caption below each image */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+    display: none; /* Hidden by default */
+}
+
+/* Highlight effect on hover */
+.gallery-item:hover {
+    transform: scale(1.05); /* Scale up slightly */
+}
+
+/* Brighten and show caption on hover */
+.gallery-item:hover img {
+    filter: brightness(1.2); /* Increase brightness on hover */
+}
+
+.gallery-item:hover .caption {
+    display: block; /* Show caption on hover */
+}
